@@ -1,9 +1,9 @@
-process.stdout.write("prompt > ");
+const pwd = require("./pwd.js");
+const ls = require("./ls.js");
+const cat = require("./cat.js");
+
+process.stdout.write("input filename > ");
 
 process.stdin.on("data", (data) => {
-  const cmd = data.toString().trim();
-  cmd === "pwd"
-    ? process.stdout.write(process.cwd())
-    : process.stdout.write("You typed: " + cmd);
-  process.stdout.write("\nprompt > ");
+  cat(data);
 });
